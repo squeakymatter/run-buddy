@@ -8,14 +8,20 @@
 header {
   padding: 20px 35px;
   background-color: #39a6b2;
+  /* add `display:flex`declaration to make <header> a row by default  */
+  display: flex;
+  /* take all unused space in <header> and put it in between the two elements. */
+  justify-content: space-between;
+  /* allow flexbox container to let its children wrap onto the next line */
+  flex-wrap: wrap;
+
 }
 
 header h1 {
   font-weight: bold;
+  margin: 0;
   font-size: 36px;
   color: #fce138;
-  margin: 0;
-  display: inline;
 }
 
 header a {
@@ -24,7 +30,6 @@ header a {
 }
 
 header nav {
-  float: right;
   margin: 7px 0;
 }
 
