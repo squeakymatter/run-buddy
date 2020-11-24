@@ -33,8 +33,28 @@ header nav {
   margin: 7px 0;
 }
 
-header nav ul li {
-  display: inline;
+header nav ul {
+  /* make a row by default */
+display:flex;
+/* allow children to wrap into next line when screen is resized */
+flex-wrap: wrap;
+/* take unused space and put it in between elements. "justify" means to position it on the main axxist. to "align means toposition it along the cross axis.*/
+justify-content: space-between;
+/* position information along the cross (y) axis */
+align-items: center;
+/* sets how a list should be styled (bullet points,dashes, etc.) */
+list-style: none;
+
+}
+
+header nav ul li a {
+  margin: 0 30px;
+  font-weight: lighter;
+  /* 
+  vw = viewport width: font size = 1.55% of the window's overall width. 
+  (viewport is the actual browser window size)
+  therefore, if browser grows or shrinks size will change relative to overall width. */
+  font-size: 1.55vw;
 }
 
 header ul li a {
@@ -48,51 +68,44 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-footer {
-  background: #fce138;
-  width: 100%;
-  padding: 40px 35px;
-}
-
-footer h2 {
-  display: inline;
-  color: #024e76;
-  font-size: 30px;
-  margin: 0;
-}
-
-footer div {
-  float: right;
-  line-height: 1.5;
-  text-align: right;
-}
-
-footer a {
-  color: #024e76;
-}
-
 section {
   padding: 60px;
 }
 
 /* Hero Style Start */
 .hero {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   background-image: url("../images/hero-bg.jpg");
-  height: 600px;
   background-size: cover;
   background-position: center;
-  position: relative;
+}
+
+.hero-cta {
+  width: 35%;
+  text-align: right;
+  margin: 3.5%;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.hero-cta h2 {
+  font-style: italic;
+  font-size: 55px;
+  color: #fce138;
 }
 
 .hero-form {
   border: solid 3px #024e76;
   background-color: #fce138;
   padding: 20px;
-  width: 500px;
   color: #024e76;
-  position: absolute;
-  bottom: 120px;
-  right: 140px;
+  width: 40%;
+  margin: 3.5%;
+  
+
 }
 .hero-form h3 {
   font-size: 24px;
@@ -270,6 +283,30 @@ section {
   
   .contact-info a {
     color: #fce138;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fce138;
+    width: 100%;
+    padding: 40px 35px;
+  }
+  
+  footer h2 {
+    color: #024e76;
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  footer div {
+    line-height: 1.5;
+    text-align: right;
+  }
+  
+  footer a {
+    color: #024e76;
   }
   
   /* REACH OUT STYLES END */
