@@ -188,12 +188,24 @@ section {
 }
 
 .step-info {
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
   flex: 2 70%;
+}
+
+.step-text {
+  flex: 12;
 }
 
 .step-text p {
   color: #39a6b2;
   font-size: 18px;
+}
+
+.step-img {
+  flex: 1 12%;
+  margin-right: 20px;
 }
 
 .step-text h4 {
@@ -202,6 +214,9 @@ section {
   color: #024e76;
 }
 
+.step-img img {
+  max-width: 100%;
+}
 
 .trainers {
 
