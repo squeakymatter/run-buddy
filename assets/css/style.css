@@ -34,17 +34,19 @@ header nav {
 }
 
 header nav ul {
-  /* make a row by default */
-display:flex;
+  /* maked a row by default */
+display: flex;
 /* allow children to wrap into next line when screen is resized */
 flex-wrap: wrap;
-/* take unused space and put it in between elements. "justify" means to position it on the main axxist. to "align means toposition it along the cross axis.*/
+/* 
+take unused space and put it in between elements. 
+  - "justify" means to position it on the main axis. 
+  - "align" means to position it along the cross axis.*/
 justify-content: space-between;
 /* position information along the cross (y) axis */
 align-items: center;
-/* sets how a list should be styled (bullet points,dashes, etc.) */
+/* removes default styling for list (removes bullets, etc. */
 list-style: none;
-
 }
 
 header nav ul li a {
@@ -184,6 +186,7 @@ section {
 .step h3 {
   color: #024e76;
   font-size: 46px;
+  /* fex: 1 30% is shorthand for flex-grow: 1 / flex-basis: 30% */
   flex: 1 30%;
 }
 
@@ -265,6 +268,8 @@ section {
     text-align: right;
 }
 
+
+/* CSS rule that can be applied anytime we need a flexbox row container */
 .flex-row {
   display:flex;
 }
