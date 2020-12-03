@@ -1,20 +1,23 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* apply styles to <header> */
+body {
+  color: #39a6b2;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/* HEADER / NAV BAR STYLES START */
+
 header {
   padding: 20px 35px;
   background-color: #39a6b2;
-  /* add `display:flex`declaration to make <header> a row by default  */
   display: flex;
-  /* take all unused space in <header> and put it in between the two elements. */
   justify-content: space-between;
-  /* allow flexbox container to let its children wrap onto the next line */
   flex-wrap: wrap;
-
 }
 
 header h1 {
@@ -34,58 +37,62 @@ header nav {
 }
 
 header nav ul {
-  /* maked a row by default */
-display: flex;
-/* allow children to wrap into next line when screen is resized */
-flex-wrap: wrap;
-/* 
-take unused space and put it in between elements. 
-  - "justify" means to position it on the main axis. 
-  - "align" means to position it along the cross axis.*/
-justify-content: space-between;
-/* position information along the cross (y) axis */
-align-items: center;
-/* removes default styling for list (removes bullets, etc. */
-list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
 }
 
 header nav ul li a {
-
-  /* Replace the margin with a padding of 10px 15px to create a tighter navigation menu */
-  /* margin: 0 30px; */
   padding: 10px 15px;
   font-weight: lighter;
-  /* 
-  vw = viewport width: font size = 1.55% of the window's overall width. 
-  (viewport is the actual browser window size)
-  therefore, if browser grows or shrinks size will change relative to overall width. */
   font-size: 1.55vw;
 }
 
-header ul li a {
-  margin: 0 30px;
-  font-weight: lighter;
-  font-size: 22px;
+/* HEADER / NAVBAR STYLES END */
+
+
+
+/* FOOTER STYLES START */
+footer {
+  background: #fce138;
+  padding: 40px 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-body {
-  color: #39a6b2;
-  font-family: Helvetica, Arial, sans-serif;
+footer h2 {
+  color: #024e76;
+  font-size: 30px;
+  margin: 0;
 }
 
+footer div {
+  line-height: 1.5;
+  text-align: right;
+}
+
+footer a {
+  color: #024e76;
+}
+/* END FOOTER STYLES */
+
+/* STYLE ALL SECTION TAGS */
 section {
   padding: 60px;
 }
 
-/* Hero Style Start */
+/* HERO STYLES START */
 .hero {
-  /* Add an align-items: flex-start declaration to it */
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-image: url("../images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
   align-items: flex-start;
 }
 
@@ -105,20 +112,18 @@ section {
 }
 
 .hero-form {
-  border: solid 3px #024e76;
+  border: 3px solid #024e76;
   background-color: #fce138;
   padding: 20px;
   color: #024e76;
   width: 40%;
   margin: 3.5%;
-
-
 }
+
 .hero-form h3 {
   font-size: 24px;
   margin: 0;
 }
-
 .hero-form p {
   margin: 5px 0 15px 0;
 }
@@ -127,9 +132,10 @@ section {
   border: 1px solid #024e76;
   display: block;
   padding: 7px 15px;
+  font-size: 16px;
   color: #024e76;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }
 
 .hero-form label {
@@ -142,19 +148,11 @@ section {
   border: none;
   padding: 10px 20px;
   font-size: 16px;
-}
+} 
+/* HERO STYLES END */
 
-/* Hero Style End */
 
-.intro p {
-  margin: 0 auto;
-  text-align: center;
-  line-height: 1.7;
-  color: #39a6b2;
-  width: 80%;
-  font-size: 20px;
-}
-
+/* SECTION TITLE STYLES START */
 .section-title {
   font-size: 48px;
   border-bottom: 3px solid;
@@ -162,7 +160,7 @@ section {
   padding-bottom: 20px;
   text-align: center;
   margin: 0 auto 35px auto;
-  width: 50%
+  width: 50%;
 }
 
 .primary-border {
@@ -172,8 +170,23 @@ section {
 .secondary-border {
   border-color: #39a6b2;
 }
+/* SECTION TITLE STYLES END */
 
-.steps {
+/* WHAT WE DO STYLES */
+
+.intro p {
+  line-height: 1.7;
+  color: #39a6b2;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+}
+/* WHAT YOU DO STYLES END */
+
+
+/* WHAT YOU DO STYLES START */
+.steps { 
   background: #fce138;
 }
 
@@ -191,15 +204,23 @@ section {
 .step h3 {
   color: #024e76;
   font-size: 46px;
-  /* fex: 1 30% is shorthand for flex-grow: 1 / flex-basis: 30% */
   flex: 1 30%;
 }
 
 .step-info {
-  display:flex;
+  flex: 2 70%;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
-  flex: 2 70%;
+}
+
+.step-img {
+  flex: 1 12%;
+  margin-right: 20px;
+}
+
+.step-img img {
+  max-width: 100%;
 }
 
 .step-text {
@@ -211,21 +232,15 @@ section {
   font-size: 18px;
 }
 
-.step-img {
-  flex: 1 12%;
-  margin-right: 20px;
-}
-
 .step-text h4 {
   font-size: 26px;
   line-height: 1.5;
   color: #024e76;
 }
 
-.step-img img {
-  max-width: 100%;
-}
+/* WHAT YOU DO STYLES END */
 
+/* MEET THE TRAINERS START */
 .trainers {
   width: 100%;
   margin: 0 auto;
@@ -236,9 +251,9 @@ section {
 
 .trainer {
   margin: 20px;
+  flex: 1;
   background: #024e76;
   color: #fce138;
-  flex: 1;
 }
 
 .trainer img {
@@ -251,55 +266,51 @@ section {
 }
 
 .trainer-bio h3 {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .trainer-bio h4 {
-    font-weight: lighter;
-    font-size: 22px;
-    margin-bottom: 15px;
+  font-weight: lighter;
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
 .trainer-bio p {
-    font-size: 17px;
+  font-size: 17px;
+}
+/* TRAINER STYLES END */
+
+/* SERVICE PLANS START */
+
+.service-grid-container {
+  display: grid;
+}
+.service-grid-item {
+  width: 200px;
+  height: 50px;
+  background-color: orange;
+  border: solid;
+  color: black;
 }
 
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
 
 
-/* CSS rule that can be applied anytime we need a flexbox row container */
-.flex-row {
-  display:flex;
-}
 
-/* REACH OUT STYLES START*/
+/* SERVICE PLANS END */
+
+/* REACH OUT STYLES START */
 .contact {
-    background: #024e76;
+  background: #024e76;
 }
 
 .contact h2 {
-    color: #fce138;
+  color: #fce138;
 }
 
 .contact-info {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.contact-info iframe {
-    height: 400px;
-}
-
-.contact-info div {  
- 
-    color: white;
 }
 
 .contact-info > * {
@@ -307,132 +318,128 @@ section {
   margin: 15px;
 }
 
+.contact-info iframe {
+  height: 400px;
+}
+
+.contact-info div {
+  color: white;
+}
+
 .contact-info h3 {
-    color: #fce138;
-    font-size: 32px;
+  color: #fce138;
+  font-size: 32px;
 }
 
 .contact-info p, .contact-info address {
-    margin: 20px 0;
-    line-height: 1.5;
-    font-size: 16px;
-    font-style: normal;
-  }
-  
-  .contact-info a {
-    color: #fce138;
+  margin: 20px 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.contact-form input, .contact-form textarea {
+  border: 1px solid #024e76;
+  display: block;
+  padding: 7px 15px;
+  font-size: 16px;
+  color: #024e76;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.contact-form button {
+  width: 100%;
+  border: none;
+  background: #fce138;
+  color: #024e76;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;
+}
+
+.contact-info a {
+  color: #fce138;
+}
+
+
+/* REACH OUT STYLES END */
+
+/* UTILITIES */
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-row {
+  display: flex;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  header {
+    padding-bottom: 0;
+    justify-content: center;
   }
 
-  .contact-form input, .contact-form textarea {
-    border: 1px solid #024e76;
-    display: block;
-    padding: 7px 15px;
-    font-size: 16px;
-    color: #024e76;
+  header h1 {
     width: 100%;
-    margin-bottom: 15px;
-    margin-top: 5px;
-  }
-
-  .contact-form button {
-    width: 100%;
-    border: none;
-    background: #fce138;
-    color: #024e76;
     text-align: center;
-    padding: 15px 0;
-    font-size: 16px
   }
-  
 
-  footer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: #fce138;
+  header nav ul {
+    margin-top: 20px;
     width: 100%;
-    padding: 40px 35px;
+    justify-content: center;
+  }
+
+  header nav ul li a {
+    font-size: 20px;
+  }
+
+  footer h2, footer div {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-cta, .hero-form {
+    width: 100%;
   }
   
-  footer h2 {
-    color: #024e76;
-    font-size: 30px;
-    margin: 0;
+  .hero-cta {
+    text-align: center;
+  }
+
+  .section-title {
+    width: 80%;
   }
   
-  footer div {
-    line-height: 1.5;
-    text-align: right;
+  .trainer {
+    flex: 0 70%;
   }
   
-  footer a {
-    color: #024e76;
+  .contact-info iframe{
+    flex: 1 100%;
   }
-  
-  /* REACH OUT STYLES END */
+}
 
-
-  @media screen and (max-width: 980px) {
-    header {
-      padding-bottom: 0;
-      justify-content: center;
-    }
-
-    header h1 {
-      width: 100%;
-      text-align: center;
-    }
-
-    header nav ul {
-      margin-top: 20px;
-      width: 100%;
-      justify-content: center;
-    }
-
-    header nav ul li a {
-      font-size: 20px
-    }
-
-    footer h2, footer div {
-      text-align: center;
-      width: 100%;
-    }
-
-    .hero-cta, .hero-form {
-      width: 100%;
-    }
-
-    .hero-cta {
-      text-align: center;
-    }
-
-    .section-title {
-      width: 80%;
-    }
-
-    .trainer {
-      flex: 0 70%;
-    }
-
-    .contact-info iframe {
-      flex: 1 100%;
-    }
-  }
-
-  /* MEDIA QUERY FOR TABLETS AND SMALLER */
-
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
   section {
-    padding: 30px 15px
-    }
+    padding: 30px 15px;
+  }
 
   .step h3 {
     flex: 1 100%;
     text-align: center;
-  }  
+  }
 
   .step-info {
-    flex: 1 100%;
+    flex: 2 100%;
     text-align: center;
     justify-content: center;
   }
@@ -445,11 +452,11 @@ section {
   }
 
   .step-text {
-    flex: 100%;
+    flex: 100%;  
   }
-
 }
 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
   .hero-form button {
     width: 100%;
@@ -467,12 +474,15 @@ section {
     flex: 0 100%;
   }
 
+  .contact-info {
+    text-align: center;
+  }
+
   .contact-info > * {
     flex: 0 100%;
   }
+
   .contact-form {
     order: 3;
-  }  
+  }
 }
-
-  
