@@ -41,3 +41,8 @@
   color: #39a6b2;
   margin: 10px 0;
 }
+
+.some-class {
+  text-shadow: 5px 10px 15px black;
+  box-shadow: 5px 10px 15px black;
+}
